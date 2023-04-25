@@ -1,4 +1,4 @@
-# AEZ Banking System Project
+# AEZ Bank
 The AEZ Banking System Project is a school project being developed by a team of three. The system aims to provide internet banking functionalities to its users with features like sending money, tagging frequent accounts as friends, managing bank information, trading money from one currency to another, setting the time to go to an ATM to withdraw some money, and other basic internet banking functionalities.
 
 ## Technologies Used
