@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
+using AEZ.Data;
 
 namespace AEZ.Areas.Identity.Data;
 
@@ -18,7 +19,7 @@ public class ApplicationUser : IdentityUser
     [Column(TypeName = "navchar(100)")]
     public string LastName { get; set; }
 
-
+    public ICollection<Account> Accounts { get; set; }
 
 }
 
