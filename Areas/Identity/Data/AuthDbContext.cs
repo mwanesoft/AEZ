@@ -21,6 +21,12 @@ public class AuthDbContext : IdentityDbContext<ApplicationUser>
         builder.Entity<ApplicationUser>()
             .HasMany(u => u.Accounts)
             .WithOne(a => a.ApplicationUser)
-            .HasForeignKey(a => a.ApplicationUser);
+            .HasForeignKey(a => a.ApplicationUserId);
+
+        builder.Entity<IdentityUserRole<string>>().ToTable("AuthUserRole");
+
+        builder.Entity<IdentityRole<string>>().ToTable("AuthRole");
+
+        builder.Entity<IdentityUserClaim<string>>().ToTable("AuthUserClaim");
     }
 }

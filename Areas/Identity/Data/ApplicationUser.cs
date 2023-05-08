@@ -12,11 +12,11 @@ namespace AEZ.Areas.Identity.Data;
 public class ApplicationUser : IdentityUser
 {
     [PersonalData]
-    [Column(TypeName = "navchar(100)")]
+    [Column(TypeName = "nvarchar(100)")]
     public string FirstName { get; set; }
 
     [PersonalData]
-    [Column(TypeName = "navchar(100)")]
+    [Column(TypeName = "nvarchar(100)")]
     public string LastName { get; set; }
 
     public ICollection<Account> Accounts { get; set; }
