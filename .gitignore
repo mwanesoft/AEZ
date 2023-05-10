@@ -2,3 +2,6 @@
 ./obj/Debug
 bin
 obj/Debug
+
+obj/Release/
+./obj/Release/
