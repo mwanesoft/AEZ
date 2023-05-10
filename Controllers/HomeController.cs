@@ -4,7 +4,7 @@ using AEZ.Models;
 using Microsoft.AspNetCore.Authorization;
 namespace AEZ.Controllers;
 
-[Authorize]
+// [Authorize]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
