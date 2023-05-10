@@ -3,16 +3,37 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
+@{
+   var user = await UserManager.GetUserAsync(User);
+}
+
+
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
+
+<!-- >Hello @User.Identity.Name!  -->
+
     <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+        <a  class="nav-link text-dark" >@(user.FirstName+" "+user.LastName)</a>
     </li>
-    <li class="nav-item">
-        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
+
+    <li class="nav-item align-items-center justify-content-center my-auto">
+        <div class="dropdown">
+            <img src="~/user.svg" alt="Avatar Logo" style="width:35px;height:35px;" class="rounded-pill dropdown-toggle border" data-bs-toggle="dropdown">
+            
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Notifications</a></li>
+            <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Profile Settings</a></li>
+            <li><hr class="dropdown-divider"></hr></li>
+            <li>
+                <form  class="form-inline dropdown-item" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                </form>
+
+            </li>
+          </ul>
+        </div>
     </li>
 }
 else

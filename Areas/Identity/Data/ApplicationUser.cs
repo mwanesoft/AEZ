@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
+using AEZ.Data;
 
 namespace AEZ.Areas.Identity.Data;
 
@@ -11,14 +12,14 @@ namespace AEZ.Areas.Identity.Data;
 public class ApplicationUser : IdentityUser
 {
     [PersonalData]
-    [Column(TypeName = "navchar(100)")]
+    [Column(TypeName = "nvarchar(100)")]
     public string FirstName { get; set; }
 
     [PersonalData]
-    [Column(TypeName = "navchar(100)")]
+    [Column(TypeName = "nvarchar(100)")]
     public string LastName { get; set; }
 
-
+    public ICollection<Account> Accounts { get; set; }
 
 }
 
