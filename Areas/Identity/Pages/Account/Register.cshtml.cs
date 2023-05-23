@@ -116,7 +116,7 @@ namespace AEZ.Areas.Identity.Pages.Account
 
             if (User.Identity.IsAuthenticated)
             {
-                Response.Redirect("/");
+                Response.Redirect("/App");
             }
 
             ReturnUrl = returnUrl;
