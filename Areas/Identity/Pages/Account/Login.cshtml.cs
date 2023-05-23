@@ -89,7 +89,7 @@ namespace AEZ.Areas.Identity.Pages.Account
         {
             if (User.Identity.IsAuthenticated)
             {
-                Response.Redirect("/");
+                Response.Redirect("/App");
             }
             if (!string.IsNullOrEmpty(ErrorMessage))
             {
